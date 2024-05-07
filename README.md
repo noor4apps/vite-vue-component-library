@@ -29,6 +29,8 @@ Add new new file under src/ called index.ts that will just export everything fro
 ### Update vite.config.ts
 ### Update package.json commands
 
+### Create some component
+
 ## Recommended Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur

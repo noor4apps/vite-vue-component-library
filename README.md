@@ -31,6 +31,21 @@ Add new new file under src/ called index.ts that will just export everything fro
 
 ### Create some component
 
+### Build our library
+
+Now finally run the “build” command (or you could run the “all” command) to compile and build our library:
+
+```shell
+npm run build
+```
+
+### Consuming our library
+To consume our library locally, let’s switch now to our vite-vue-project and install a reference to our library by running this command:
+
+```shell
+npm install -D file:../vite-vue-component-library
+```
+
 ## Recommended Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur

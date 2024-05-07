@@ -26,6 +26,9 @@ Remove also the public directory and all its contents.
 ### Add main entry index.ts file
 Add new new file under src/ called index.ts that will just export everything from the components/ sub-directory
 
+### Update vite.config.ts
+### Update package.json commands
+
 ## Recommended Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur

@@ -1,20 +1,38 @@
 {
   "name": "vite-vue-component-library",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "clean": "rm -rf ./dist; rm -rf vite-vue-component-library-0.0.0.tgz; rm -rf ../vite-vue-component-library-0.0.0.tgz",
+    "build-types": "vue-tsc --declaration --emitDeclarationOnly --outDir ./dist",
+    "build-lib": "vite build",
+    "build": "npm run clean && npm run build-lib && npm run build-types",
+    "pack": "npm pack; mv vite-vue-component-library-0.0.0.tgz ../vite-vue-component-library-0.0.0.tgz",
+    "all": "npm run build && npm run pack",
+    "preversion": "npm run clean",
+    "version": "npm run build",
+    "postversion": "npm run pack",
+    "version-patch": "npm version patch -m \"Patch version\""
   },
-  "dependencies": {
-    "vue": "^3.4.21"
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/src/index.d.ts",
+  "main": "./dist/vite-vue-component-lib.umd.js",
+  "module": "./dist/vite-vue-component-lib.es.js",
+  "exports": {
+    ".": {
+      "import": [
+        "./dist/vite-vue-component-lib.es.js"
+      ],
+      "require": "./dist/vite-vue-component-lib.umd.js"
+    },
+    "./package.json": "./package.json"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
+    "vue": "^3.4.21",
     "vue-tsc": "^2.0.6"
   }
 }
